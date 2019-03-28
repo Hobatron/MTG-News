@@ -31,11 +31,16 @@ Subsequent response definitions will only detail the expected value of the `data
 
 ```json
 {
-    "id": "mongoID", //Auto generated id
-    "body": "Content for the indivdual comment", //Main body of the comment
-    "edit_code": "(4)int", //User provdied four digit code required to update/delete comment
-    "created_at": "Date.now()", //Is always set to current server date/time
-    "lastEdited": "default Null", //If edited, will be set to the current server date/time
+    //Auto generated id
+    "id": "mongoID",
+    //Main body of the comment
+    "body": "Content for the indivdual comment",
+    //User provdied four digit code required to update/delete comment
+    "edit_code": "(4)int",
+    //Is always set to current server date/time
+    "created_at": "Date.now()",
+    //If edited, will be set to the current server date/time
+    "lastEdited": "default Null",
 }
 ```
 
