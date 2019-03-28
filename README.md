@@ -26,6 +26,19 @@ Subsequent response definitions will only detail the expected value of the `data
 
 ## Comments
 
+**Storage**
+- Comments are stored in a mongodb
+
+```json
+{
+    "id": "mongoID", //Auto generated id
+    "body": "Content for the indivdual comment", //Main body of the comment
+    "edit_code": "(4)int", //User provdied four digit code required to update/delete comment
+    "created_at": "Date.now()", //Is always set to current server date/time
+    "lastEdited": "default Null", //If edited, will be set to the current server date/time
+}
+```
+
 ### - List comments associated with artical
 
 **Definition**
@@ -40,7 +53,6 @@ Subsequent response definitions will only detail the expected value of the `data
     {
         "id": "mongoID",
         "body": "Content for the indivdual comment",
-        "edit_code": "User provided edit code(4 digits)",
         "created_at": "Created @ date",
         "lastEdited": "default Null",
     },
@@ -66,7 +78,6 @@ Subsequent response definitions will only detail the expected value of the `data
 {
     "id": "mongoID",
     "body": "Content for the indivdual comment",
-    "edit_code": "User provided edit code(4 digits)",
     "created_at": "Date.now()",
     "lastEdited": "default Null",
 }
@@ -75,10 +86,9 @@ Subsequent response definitions will only detail the expected value of the `data
 ### - Edit comment
 
 **Definition**
-- `POST /api/comment`
+- `POST /api/comment/<id>`
 
 **Arguments**
-- `"id": string` - comment's mongoID
 - `"edit_code": int` - required
 
 **Response**
@@ -90,7 +100,6 @@ Subsequent response definitions will only detail the expected value of the `data
 {
     "id": "mongoID",
     "body": "Content for the indivdual comment",
-    "edit_code": "User provided edit code(4 digits)",
     "created_at": "Created @ date",
     "lastEdited": "Date.now()",
 }
@@ -99,10 +108,9 @@ Subsequent response definitions will only detail the expected value of the `data
 ### - Delete comment
 
 **Definition**
-- `POST /api/comment`
+- `DELETE /api/comment/<id>`
 
 **Arguments**
-- `"id": string` - comment's mongoID
 - `"edit_code": int` - required
 
 **Response**
