@@ -8,7 +8,7 @@
 - `GET /`
 
 **Response**
-- Scrapes [NPR Tech](https://www.npr.org/sections/technology/), updates the db, then renders the homepage with handlebars.
+- Scrapes [MTG Archive](https://magic.wizards.com/en/articles/archive), updates the db, then renders the homepage with handlebars.
 
 ## API Endpoints
 
