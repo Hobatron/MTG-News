@@ -1,0 +1,51 @@
+<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+<div>
+    <div class="brody row">
+        <div class="col-6 pr-0">
+            {{#each articles}}
+                <div class="row article" data-article-id="{{id_}}">
+                    <div class="img" style="{{img}}"></div>
+                    <div class="container col content">
+                        <div class="title">{{title}}</div>
+                        <div class="row">
+                            <div class="def col-6">
+                                <div class="author">{{author}}</div>
+                                <div class="def">Catagory: <span>{{catagory}}</span></div>
+                            </div>
+                            <div class="col-6">
+                                <div class="">{{postDate}}</div>
+                            </div>
+                        </div> {{!-- text div --}}
+                    </div> {{!-- contents div --}}
+                </div> {{!-- article div --}}
+            {{/each}}
+        </div>
+        <div class="col-6 exploreArticle sticky-top scrollbar">
+            {{#each articles}}
+                <div class="details" id="{{id_}}">
+                    <div class="intro">
+                        <span>{{description}}</span>
+                    </div>
+                    <a href="{{link}}" target="_blank">Read full article</a>
+                    <hr>
+                    <form class="container">
+                        <div class="row col">
+                            <input type="text" class="form-control" id="comment{{id_}}" placeholder="Your comment">
+                            <div class="row float-right">
+                                <div class="col-7 pr-0">
+                                    <input type="text" class="form-control" id="pin{{id_}}"
+                                        placeholder="Edit PIN(4 digits)">
+                                </div>
+                                <div class="col-5 pl-0">
+                                    <button class="submit btn btn-secondary" data-article-id="{{id_}}">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+</div>

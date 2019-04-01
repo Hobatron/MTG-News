@@ -1,0 +1,122 @@
+body {
+    color: white;
+    font-size: 1em;
+    background-image: url(../img/4k-wallpaper-architecture-background-1308624.jpg);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, grey, #333, grey);
+}
+
+a {
+    font-weight: bold;
+    color: rgb(96, 189, 192)
+}
+
+a:hover {
+    color: rgb(96, 189, 192);
+    text-decoration: none;
+}
+
+.input-group {
+    border-radius: 0px;
+}
+
+.brody {
+    width: 99vw;
+}
+
+.img {
+    width: 135px;
+    height: 100px;
+    background: 50% 50%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+
+.details {
+    display: none;
+}
+
+.intro {
+    font-size: 1.8em
+}
+
+.exploreArticle {
+    height: 100vh;
+    background-color: grey;
+    overflow: auto;
+}
+
+.def {
+    font-size: .8em;
+}
+
+
+.article:hover {
+    background-color: grey;
+}
+
+.grey {
+    background-color: grey;
+}
+
+
+.article {
+    margin: 10px;
+    padding: 10px;
+    padding-right: 0px;
+    margin-right: 0px;
+    border-right: 0px;
+    background-color: #343A40;
+}
+
+.content {
+    padding: 10px 0 0 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+    /* Styles */
+}
+
+@media only screen and (max-width : 768px) {
+    /* Styles */
+}
+
+/* Tablets (portrait and landscape) --------*/
+@media only screen and (max-width : 1024px) {
+    /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (max-width : 1824px) {
+    /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1825px) {
+    /* Styles */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}

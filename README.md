@@ -1,4 +1,4 @@
-# NPR-Tech-Scrape
+# MTG - News
 
 ## HTML Endpoints
 
@@ -10,10 +10,51 @@
 **Response**
 - Scrapes [MTG Archive](https://magic.wizards.com/en/articles/archive), updates the db, then renders the homepage with handlebars.
 
+## Storage
+All items are stored in mongodb
+
+### - Articles:
+
+**Definition**
+```json
+[
+    {
+        "id": "mongoID",
+        "catagory": "Feature",
+        "title": "War of the Spark Mechanics",
+        "author": "Mat Tabak",
+        "description": "Matt reveals the new and returning mechanics you'll see as Nicol Bolas executes his endgame in War of the Spark!",
+        "img": "background-image: url(https://magic.wizards.com/sites/mtg/files/images/hero/UABkA31Czn_icon.jpg);",
+        "postDate": "March 31 2019",
+        "link":"https://magic.wizards.com/en/articles/archive/magic-online/magic-online-announcements-march-2019-03-26",
+    },
+    {
+        `etc`
+    },
+]
+```
+
+### - Comments:
+
+**Definition**
+```json
+[
+    {
+        "id": "mongoID",
+        "body": "My first comment!", 
+        "edit_code": "1234", 
+        "created_at": "Date.now()",
+        "lastEdited": "default Null", 
+    },
+    {
+        `etc`
+    },
+]
+```
 ## API Endpoints
 
-### Usage
-All responses have the form:
+### - Usage:
+All responses have the form
 
 ```json
 {
@@ -24,29 +65,7 @@ All responses have the form:
 
 Subsequent response definitions will only detail the expected value of the `data` field
 
-## Comments
-
-**Storage**
-- Comments are stored in a mongodb
-
-**Definition**
- - `"id":` Auto generated id
- - `"body":` Main body of the comment
- - `"edit_code":` User provdied four digit code required to update/delete comment
- - `"created_at":` Is always set to current server date/time
- - `"lastEdited":` If edited, will be set to the current server date/time
-
-```json
-{
-    "id": "mongoID",
-    "body": "Content for the indivdual comment", 
-    "edit_code": "(4)int", 
-    "created_at": "Date.now()",
-    "lastEdited": "default Null", 
-}
-```
-
-### - List comments associated with artical
+### - List comments associated with article:
 
 **Definition**
 - `GET /api/comment`
@@ -65,38 +84,40 @@ Subsequent response definitions will only detail the expected value of the `data
     },
     {
         `etc`
-    }
+    },
 ]
 ```
 
-### - Post new comment
+### - Post new comment:
 
 **Definition**
 - `POST /api/comment`
 
 **Arguments**
-- `"body": longstring` - required
-- `"edit_code": (4)int` - required
+- `"body": longstring`
+- `"edit_code": (4)int`
+- `"mongoId": of article`
 
 **Response**
 - `201 Created` on success
+- `404 Not Found` no article exists
 
 ```json
 {
-    "id": "mongoID",
+    "id": "mongoID for comment",
     "body": "Content for the indivdual comment",
     "created_at": "Date.now()",
     "lastEdited": "default Null",
 }
 ```
 
-### - Edit comment
+### - Edit comment:
 
 **Definition**
 - `POST /api/comment/<id>`
 
 **Arguments**
-- `"edit_code": int` - required
+- `"edit_code": int`
 
 **Response**
 - `202 Accepted` on success
@@ -112,13 +133,13 @@ Subsequent response definitions will only detail the expected value of the `data
 }
 ```
 
-### - Delete comment
+### - Delete comment:
 
 **Definition**
 - `DELETE /api/comment/<id>`
 
 **Arguments**
-- `"edit_code": int` - required
+- `"edit_code": int`
 
 **Response**
 - `202 Accepted` on success
