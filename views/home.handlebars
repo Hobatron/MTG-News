@@ -3,7 +3,7 @@
     <div class="brody row">
         <div class="col-6 pr-0">
             {{#each articles}}
-                <div class="row article" data-article-id="{{id_}}">
+                <div class="row article" data-article-id="{{_id}}">
                     <div class="img" style="{{img}}"></div>
                     <div class="container col content">
                         <div class="title">{{title}}</div>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-6 exploreArticle sticky-top scrollbar">
             {{#each articles}}
-                <div class="details" id="{{id_}}">
+                <div class="details" id="{{_id}}">
                     <div class="intro">
                         <span>{{description}}</span>
                     </div>
@@ -43,6 +43,7 @@
                         </div>
                     </form>
                     <hr>
+                    <div class="container comments"></div>
                 </div>
             {{/each}}
         </div>
