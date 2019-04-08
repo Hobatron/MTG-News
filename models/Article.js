@@ -19,7 +19,7 @@ var ArticleSchema = new Schema({
 		required: true
 	},
 	postDate: {
-		type: String,
+		type: Date,
 		required: true
 	},
 	title: {
